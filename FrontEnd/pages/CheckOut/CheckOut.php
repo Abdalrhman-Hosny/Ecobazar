@@ -70,7 +70,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Style/checkout.css" type="text/css">
-    <link rel="stylesheet" href="../Logic/checkOut.java">
+    <!-- <link rel="stylesheet" href="../Logic/checkOut.java"> -->
     <title>Checkout Page</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -86,7 +86,7 @@ $conn->close();
     <!-- Font Awesome for additional icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="../Style/main.css">
+    <link rel="stylesheet" href="../../Style/add-to-cart.css"> 
 </head>
 
 
@@ -147,11 +147,12 @@ $conn->close();
                         </a>
                     </div>
                     <!-- Shopping cart with offcanvas toggle -->
-                    <div class="me-3">
-                        <a href="#" style="color: var(--black-text-color);" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                    <div id="cart-icon">
+                        <a href="Shopping Cart/shopping_cart.html" style="color: var(--black-text-color);" class="me-3" data-bs-toggle="offcanvas" 
+                        data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
                             <i class="bi bi-handbag fa-lg"></i>
                         </a>
+                        <span class="cart-item-count"></span>
                     </div>
                     <!-- User profile icon (hidden on mobile) -->
                     <div class="me-3 d-lg-flex d-none">
@@ -237,94 +238,20 @@ $conn->close();
                     </div>
                 </div>
             </div>
-
-            <!-- Shopping cart offcanvas panel -->
-            <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="offcanvasCart"
-                aria-labelledby="offcanvasCartLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasCartLabel">Shopping Cart (2)</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="container">
-                        <div class="col">
-                            <!-- First cart item -->
-                            <div class="row position-relative">
-                                <div class="col">
-                                    <img src="../Assets/orange.jpg" class="w-25" alt="">
-                                </div>
-                                <div class="col-auto">
-                                    <div class="row" style="margin-left: -240px;margin-top:20px;">
-                                        <p style="font-weight:400;font-family: poppins;color:var(--black-text-color);">
-                                            Fresh Indian Orange</p>
-                                    </div>
-                                    <div class="row" style="margin-top:-18px;margin-left: -240px;">
-                                        <p style="color:var(--black-text-color);">1 kg x <span
-                                                class="fw-bold">12.00</span></p>
-                                    </div>
-                                </div>
-                                <div class="col position-absolute" style="margin-left: 320px; margin-top:20px;">
-                                    <div class="btn-group" role="group" aria-label="Third group">
-                                        <button type="button" class="x-button border-0"
-                                            style="background-color:var(--white);color:var(--black-text-color);">x</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Second cart item -->
-                            <div class="row">
-                                <div class="row position-relative">
-                                    <div class="col" style="margin-left:-50px;">
-                                        <img src="../Assets/apple.jpg" class="w-50" alt="">
-                                    </div>
-                                    <div class="col-auto">
-                                        <div class="row" style="margin-left: -185px;margin-top:40px;">
-                                            <p
-                                                style="font-weight:400;font-family: poppins;color:var(--black-text-color);">
-                                                Green Apple</p>
-                                        </div>
-                                        <div class="row" style="margin-top:-18px;margin-left: -185px;">
-                                            <p style="color:var(--black-text-color);">1 kg x <span
-                                                    class="fw-bold">14.00</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="col position-absolute" style="margin-left: 320px; margin-top:40px;">
-                                        <div class="btn-group" role="group" aria-label="Third group">
-                                            <button type="button" class="x-button border-0"
-                                                style="background-color:var(--white);color:var(--black-text-color);">x</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Cart summary -->
-                            <div class="row" style="margin-top: 370px;">
-                                <div class="col d-flex justify-content-end align-content-end">
-                                    <p style="color: var(--black-text-color);">2 products</p>
-                                </div>
-                                <div class="col">
-                                    <p class="fw-bold" style="color: var(--black-text-color);">$26.00</p>
-                                </div>
-                            </div>
-
-                            <!-- Cart action buttons -->
-                            <div class="col" style="margin-top: 10px;">
-                                <div class="row d-block">
-                                    <button type="button" class="btn border rounded-5 d-block"
-                                        style="color: var(--background-page); background-color: var(--green-text); margin-bottom: 10px;">Checkout</button>
-                                </div>
-                                <div class="row d-block">
-                                    <button type="button" class="btn border rounded-5"
-                                        style="color: var(--black-text-color); background-color: var(--card-border-color);">Go
-                                        To Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </nav>
+            <!-- cart details -->
+            <div class="cart">
+                <h2 class="cart-title">Your Cart</h2>
+                <div class="cart-content">
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <button class="btn-buy">Buy Now</button>
+                <i class="fa-solid fa-circle-xmark" id="cart-close"></i>
+            </div>
     <div class="container" >
         <div class="row"style="margin-top: 50px;">
             <div class="col-lg-8">
@@ -444,7 +371,7 @@ $conn->close();
                     <div class="price-summary">
                         <div class="summary-row">
                             <span>Subtotal:</span>
-                            <span>$00.00</span>
+                            <span>$84.00</span>
                         </div>
                         <div class="summary-row">
                             <span>Shipping:</span>
@@ -452,7 +379,7 @@ $conn->close();
                         </div>
                         <div class="summary-row total">
                             <span>Total:</span>
-                            <span>$00.00</span>
+                            <span>$84.00</span>
                         </div>
                     </div>
                     
@@ -463,7 +390,9 @@ $conn->close();
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="../../Logics/checkout.js"></script>
+
     <nav class="navbar pt-0" style="background-color:var(--footer-background);">
         <!-- Top bar with contrasting background color -->
         <div class="container-fluid" style="background-color:var(--card-border-color);">
@@ -711,5 +640,7 @@ $conn->close();
         </div>
     </nav>
     <script src="../../Logics/header.js"></script>
+    <script src="../../Logics/add&delete-cart.js"></script>
+
 </body>
 </html>
