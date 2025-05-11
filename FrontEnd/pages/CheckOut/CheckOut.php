@@ -392,6 +392,7 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="../../Logics/checkout.js"></script>
+    <script src="../../Logics/add&delete-cart.js"></script>
 
     <nav class="navbar pt-0" style="background-color:var(--footer-background);">
         <!-- Top bar with contrasting background color -->
@@ -640,7 +641,5 @@ $conn->close();
         </div>
     </nav>
     <script src="../../Logics/header.js"></script>
-    <script src="../../Logics/add&delete-cart.js"></script>
-
 </body>
 </html>
